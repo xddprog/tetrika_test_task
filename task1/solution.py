@@ -1,7 +1,7 @@
 def strict(func):
     def wrapper(*args):
         annotations = func.__annotations__
-        param_types = list(annotations.values())[:-1]  # Exclude return type
+        param_types = list(annotations.values())[:-1]
         
         for arg, expected_type in zip(args, param_types):
             if not isinstance(arg, expected_type):
